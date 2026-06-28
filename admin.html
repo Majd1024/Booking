@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Admin</title>
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+
+  <div class="admin-layout">
+    <div class="overlay" id="overlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="logo">📅 Booking Admin</div>
+
+      <nav>
+        <button class="nav-btn active" data-section="dashboard">Dashboard</button>
+        <button class="nav-btn" data-section="appointments">Appointments</button>
+        <button class="nav-btn" data-section="workingHours">Working Hours</button>
+        <button class="nav-btn" data-section="blockedDays">Blocked Days</button>
+        <button class="nav-btn" data-section="notes">Notes</button>
+        <button class="nav-btn" data-section="settings">Settings</button>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <button class="hamburger-btn" id="hamburgerBtn">☰</button>
+
+      <header class="topbar">
+        <input id="adminSearch" placeholder="Search bookings..." />
+        <div class="admin-user">Admin</div>
+      </header>
+
+      <section class="admin-section active" id="dashboard">
+        <h1>Dashboard</h1>
+        <p class="subtitle">Welcome back 👋</p>
+
+        <div class="stats-grid">
+          <div class="stat-card"><span>Today</span><h2 id="todayCount">0</h2></div>
+          <div class="stat-card"><span>Pending</span><h2 id="pendingCount">0</h2></div>
+          <div class="stat-card"><span>Approved</span><h2 id="approvedCount">0</h2></div>
+          <div class="stat-card"><span>Rejected</span><h2 id="rejectedCount">0</h2></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="panel">
+            <h2>Today’s Schedule</h2>
+            <div id="todaySchedule"></div>
+          </div>
+
+          <div class="panel">
+            <h2>Upcoming Appointments</h2>
+            <div id="upcomingAppointments"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="admin-section" id="appointments">
+        <h1>Appointments</h1>
+        <div class="panel" id="pendingBookings"></div>
+        <div class="panel" id="approvedBookings"></div>
+        <div class="panel" id="rejectedBookings"></div>
+      </section>
+
+      <section class="admin-section" id="workingHours">
+        <h1>Working Hours</h1>
+        <div class="panel">
+          <div id="workingHoursEditor"></div>
+          <button class="primary-btn" id="saveWorkingHoursBtn">Save Working Hours</button>
+        </div>
+      </section>
+
+      <section class="admin-section" id="blockedDays">
+        <h1>Blocked Days / Vacation</h1>
+        <div class="panel">
+          <label>From</label>
+          <input type="date" id="vacationStart">
+
+          <label>To</label>
+          <input type="date" id="vacationEnd">
+
+          <label>Reason</label>
+          <input type="text" id="vacationReason" placeholder="Vacation, emergency, closed...">
+
+          <button class="primary-btn" id="addVacationBtn">Block Days</button>
+
+          <div id="blockedDaysList"></div>
+        </div>
+      </section>
+
+      <section class="admin-section" id="notes">
+        <h1>Notes</h1>
+        <div class="panel">
+          <textarea id="adminNotes" placeholder="Write internal notes here..."></textarea>
+          <button class="primary-btn" id="saveNotesBtn">Save Notes</button>
+        </div>
+      </section>
+
+      <section class="admin-section" id="settings">
+        <h1>Settings</h1>
+        <div class="panel">
+          <button class="primary-btn" id="darkModeBtn">Toggle Dark Mode</button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
