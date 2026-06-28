@@ -4,28 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Booking Calendar</title>
+
     <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" type="image/x-icon" href="images/calender.png" />
-  <link rel="manifest" href="manifest.json" />
+
+    <link rel="icon" type="image/x-icon" href="images/calender.png" />
+
+    <link rel="manifest" href="manifest.json" />
+
+    <meta name="theme-color" content="#4f86e8" />
+
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="default"
+    />
+    <meta name="apple-mobile-web-app-title" content="Booking Calendar" />
   </head>
+
   <body>
     <main class="app">
+
+      <div class="top-buttons">
+        <a href="admin.html" class="admin-btn">
+          ⚙ Admin
+        </a>
+
+        <button id="installBtn" class="install-btn">
+          📲 Install App
+        </button>
+      </div>
+
       <section class="page active" id="calendarPage">
-        <a href="admin.html" class="admin-btn"> ⚙ Admin </a>
         <h1>Select Date & Time</h1>
 
-        <!-- <input class="search" placeholder="Search for a service..." />    -->
+        <!-- <input class="search" placeholder="Search for a service..." /> -->
 
         <div class="calendar-card">
           <div class="calendar-header">
             <button id="prevMonth">‹</button>
+
             <h2 id="monthTitle"></h2>
+
             <button id="nextMonth">›</button>
           </div>
 
           <div class="weekdays">
-            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span
-            ><span>Fri</span><span>Sat</span><span>Sun</span>
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+            <span>Sun</span>
           </div>
 
           <div class="dates" id="dates"></div>
@@ -33,7 +64,9 @@
 
         <div class="time-section">
           <h2>Available Times</h2>
+
           <p id="closedMessage" class="closed-message"></p>
+
           <div class="time-grid" id="timeGrid"></div>
         </div>
 
@@ -42,33 +75,48 @@
             <small>Date</small>
             <b id="selectedDateText">Not selected</b>
           </div>
+
           <div>
             <small>Time</small>
             <b id="selectedTimeText">Not selected</b>
           </div>
         </div>
 
-        <button class="main-btn" id="continueBtn">Continue Booking →</button>
+        <button class="main-btn" id="continueBtn">
+          Continue Booking →
+        </button>
       </section>
 
       <section class="page" id="detailsPage">
-        <button class="back-btn" id="backBtn">← Back</button>
+        <button class="back-btn" id="backBtn">
+          ← Back
+        </button>
 
         <h1>Booking Details</h1>
 
         <div class="service-card">
           <div class="icon">📅</div>
+
           <div>
             <b>Appointment</b>
-            <p id="bookingSummary">No date selected</p>
+
+            <p id="bookingSummary">
+              No date selected
+            </p>
           </div>
         </div>
 
         <form id="bookingForm">
           <label>Full Name</label>
-          <input id="nameInput" placeholder="Your name" required />
+
+          <input
+            id="nameInput"
+            placeholder="Your name"
+            required
+          />
 
           <label>Email Address</label>
+
           <input
             id="emailInput"
             type="email"
@@ -77,23 +125,40 @@
           />
 
           <label>Phone Number</label>
-          <input id="phoneInput" placeholder="+49 ..." />
+
+          <input
+            id="phoneInput"
+            placeholder="+49 ..."
+          />
 
           <label>Notes</label>
+
           <textarea
             id="notesInput"
             placeholder="Write anything important..."
           ></textarea>
 
-          <button class="main-btn" type="submit">Submit Booking</button>
+          <button
+            class="main-btn"
+            type="submit"
+          >
+            Submit Booking
+          </button>
         </form>
       </section>
 
       <section class="page" id="successPage">
         <h1>Booking Sent ✅</h1>
-        <p class="center-text">Your booking is pending approval.</p>
-        <button class="main-btn" id="newBookingBtn">New Booking</button>
+
+        <p class="center-text">
+          Your booking is pending approval.
+        </p>
+
+        <button class="main-btn" id="newBookingBtn">
+          New Booking
+        </button>
       </section>
+
     </main>
 
     <script src="js/booking.js"></script>
