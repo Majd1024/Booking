@@ -86,15 +86,20 @@ textarea {
   padding: 14px;
   border-radius: 10px;
   cursor: pointer;
+  background: white;
+  border: 1px solid #d8d8d8;
+  transition: all 0.2s ease;
 }
 
-.date:hover {
+.date:hover:not(.disabled) {
   background: #e8efff;
+  border-color: #4f86e8;
 }
 
 .date.selected {
   background: #4f86e8;
   color: white;
+  border-color: #4f86e8;
 }
 
 .date.today {
@@ -102,8 +107,9 @@ textarea {
 }
 
 .date.disabled {
-  color: #bbb;
+  color: #b3b3b3;
   background: #f3f3f3;
+  border: 1px solid #ececec;
   cursor: not-allowed;
 }
 
@@ -283,11 +289,12 @@ textarea {
   .weekdays,
   .dates {
     gap: 7px;
-    font-size: 12px;;
+    font-size: 12px;
   }
 
   .date {
     padding: 10px 4px;
+    border-radius: 8px;
   }
 
   .time-grid {
