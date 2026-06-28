@@ -283,7 +283,7 @@ textarea {
   .weekdays,
   .dates {
     gap: 7px;
-    font-size: 12px;
+    font-size: 12px;;
   }
 
   .date {
